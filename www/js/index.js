@@ -35,28 +35,16 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-        console.log("DEVICE IS READY");
-
-        setInterval( function() {
-            console.log("FUCK YOU1", navigator.geolocation);
-        }, 1000);
+        console.log("Device is ready");
 
 
         ////Make sure to get at least one GPS coordinate in the foreground before starting background services
         //navigator.geolocation.getCurrentPosition();
 
-        setInterval( function() {
-            console.log("FUCK YOU", window, window.plugins);
-        }, 1000);
-
         //Get plugin
         var bgLocationServices =  window.plugins.backgroundLocationServices;
 
-        setInterval( function() {
-            console.log("FUCK YOU", bgLocationServices);
-        }, 1000);
-
-        console.log("HAVE BG LOCATION", bgLocationServices);
+        console.log("Do we have the plugin?", bgLocationServices);
 
         //Congfigure Plugin
         bgLocationServices.configure({
