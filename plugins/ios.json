@@ -13,12 +13,6 @@
                             "count": 1
                         }
                     ],
-                    "com.google.android.gms:play-services-location:+": [
-                        {
-                            "xml": false,
-                            "count": 1
-                        }
-                    ],
                     "AudioToolbox.framework": [
                         {
                             "xml": true,
@@ -76,10 +70,10 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "cordova-plugin-console": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "org.flybuy.cordova.background-location-services": {
@@ -87,6 +81,9 @@
         }
     },
     "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }

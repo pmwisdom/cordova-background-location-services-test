@@ -56,7 +56,7 @@ var app = {
             //Android Only
             notificationTitle: 'BG Plugin', // customize the title of the notification
             notificationText: 'Tracking', //customize the text of the notification
-                fastestInterval: 5000, // <-- (Milliseconds) Fastest interval your app / server can handle updates
+            fastestInterval: 5000, // <-- (Milliseconds) Fastest interval your app / server can handle updates
             useActivityDetection: true // Uses Activitiy detection to shut off gps when you are still (Greatly enhances Battery Life)
 
         });
@@ -77,8 +77,10 @@ var app = {
             console.log("Error: Something went wrong", err);
         });
 
-        //Start the Background Tracker. When you enter the background tracking will start, and stop when you enter the foreground.
-        bgLocationServices.start();
+        setTimeout(function() {
+            //Start the Background Tracker. When you enter the background tracking will start, and stop when you enter the foreground.
+            bgLocationServices.start();
+        }, 1000);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

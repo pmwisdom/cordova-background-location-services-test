@@ -35,28 +35,16 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 
-        console.log("DEVICE IS READY");
-
-        setInterval( function() {
-            console.log("FUCK YOU1", navigator.geolocation);
-        }, 1000);
+        console.log("Device is ready");
 
 
         ////Make sure to get at least one GPS coordinate in the foreground before starting background services
         //navigator.geolocation.getCurrentPosition();
 
-        setInterval( function() {
-            console.log("FUCK YOU", window, window.plugins);
-        }, 1000);
-
         //Get plugin
         var bgLocationServices =  window.plugins.backgroundLocationServices;
 
-        setInterval( function() {
-            console.log("FUCK YOU", bgLocationServices);
-        }, 1000);
-
-        console.log("HAVE BG LOCATION", bgLocationServices);
+        console.log("Do we have the plugin?", bgLocationServices);
 
         //Congfigure Plugin
         bgLocationServices.configure({
@@ -68,7 +56,7 @@ var app = {
             //Android Only
             notificationTitle: 'BG Plugin', // customize the title of the notification
             notificationText: 'Tracking', //customize the text of the notification
-                fastestInterval: 5000, // <-- (Milliseconds) Fastest interval your app / server can handle updates
+            fastestInterval: 5000, // <-- (Milliseconds) Fastest interval your app / server can handle updates
             useActivityDetection: true // Uses Activitiy detection to shut off gps when you are still (Greatly enhances Battery Life)
 
         });
@@ -89,8 +77,10 @@ var app = {
             console.log("Error: Something went wrong", err);
         });
 
-        //Start the Background Tracker. When you enter the background tracking will start, and stop when you enter the foreground.
-        bgLocationServices.start();
+        setTimeout(function() {
+            //Start the Background Tracker. When you enter the background tracking will start, and stop when you enter the foreground.
+            bgLocationServices.start();
+        }, 1000);
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {

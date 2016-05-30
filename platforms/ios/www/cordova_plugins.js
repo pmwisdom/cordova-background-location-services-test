@@ -53,10 +53,11 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-console": "1.0.2",
-    "org.flybuy.cordova.background-location-services": "1.0.0",
-    "cordova-plugin-geolocation": "2.1.0"
+    "cordova-plugin-whitelist": "1.2.1",
+    "org.flybuy.cordova.background-location-services": "1.0.1",
+    "cordova-plugin-compat": "1.0.0",
+    "cordova-plugin-geolocation": "2.2.0"
 }
 // BOTTOM OF METADATA
 });
